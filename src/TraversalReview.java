@@ -242,7 +242,7 @@ public class TraversalReview {
      */
     public static boolean hasNonDivisible(TreeNode node, int k) {
         if (node == null) return false;
-        
+
         if (node.data % k != 0) {
             return true;
         }
@@ -273,6 +273,11 @@ public class TraversalReview {
      * @return a string with all the values of the tree concatenated in-order
      */
     public static String concatenate(TreeNode node) {
-        return "";
+        if (node == null) {
+            return "";
+        }
+        String string = "";
+
+        return concatenate(node.left) + node.data + concatenate(node.right);
     }
 }
